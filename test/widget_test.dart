@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:github_search/githubSearch.dart';
+import 'package:github_search/github_search.dart';
 
 import 'package:github_search/main.dart';
 

@@ -1,4 +1,4 @@
-import '../repoList/screen/screen.dart';
+import '../repo_list/screen/screen.dart';
 
 final routes = {
   "/": (context) => const RepoListScreen(),

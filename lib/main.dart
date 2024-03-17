@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
-import 'githubSearch.dart';
+import 'github_search.dart';
 
 void main() => runApp(const GithubSearch());
