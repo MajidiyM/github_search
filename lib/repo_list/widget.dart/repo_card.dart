@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
+// Виджет карточек проектов
 class RepoCard extends StatelessWidget {
   const RepoCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Card(
-      color: Color(0xFF1b2333),
+    return Card(
+      color: const Color(0xFF1b2333),
       child: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: InkWell(
+        padding: const EdgeInsets.all(10.0),
+        child: InkWell( // при нажатии на карточку выполняет действие
           onTap: () {
             print("pressed");
           },
@@ -18,48 +19,36 @@ class RepoCard extends StatelessWidget {
             children: [
               Text(
                 "Project Name",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                ),
+                style: Theme.of(context).textTheme.displayLarge,
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               Text(
                 "Project Author",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                ),
+                style: Theme.of(context).textTheme.displayLarge,
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               Row(
                 children: [
                   Text(
                     "Views: 100",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                    ),
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.star_border,
                         color: Colors.white,
                         size: 22.0,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5.0,
                       ),
                       Text(
                         "100",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                        ),
+                        style: Theme.of(context).textTheme.displayMedium,
                       ),
                     ],
                   )

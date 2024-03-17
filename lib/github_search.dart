@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'theme/theme.dart';
+import 'package:github_search/theme/theme.dart';
 import 'routes/routes.dart';
 
 class GithubSearch extends StatelessWidget {
@@ -9,7 +9,7 @@ class GithubSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: darkTheme,
+      theme: theme,
       routes: routes,
     );
   }

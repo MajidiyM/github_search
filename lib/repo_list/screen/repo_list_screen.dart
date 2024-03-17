@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/repo_list/widget.dart/widget.dart';
+import 'package:github_search/theme/theme.dart';
 
 class RepoListScreen extends StatefulWidget {
   const RepoListScreen({super.key});
@@ -21,7 +22,7 @@ class _RepoListScreenState extends State<RepoListScreen> {
             color: Colors.white,
           ),
         ),
-        backgroundColor: const Color(0xFF24292f),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -33,6 +34,7 @@ class _RepoListScreenState extends State<RepoListScreen> {
                 color: Colors.white,
                 fontSize: 22.0,
               ),
+              // стиль поля поиска
               decoration: InputDecoration(
                   contentPadding:
                       EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
@@ -46,10 +48,12 @@ class _RepoListScreenState extends State<RepoListScreen> {
               height: 20.0,
             ),
             Expanded(
+              // список проектов
               child: ListView.separated(
                 shrinkWrap:
                     true, // Указываем ListView сжиматься, чтобы занять только необходимое пространство
-                itemBuilder: (context, index) => const RepoCard(),
+                itemBuilder: (context, index) =>
+                    const RepoCard(), // RepoCard() - виджет карточек проектов
                 separatorBuilder: (context, index) => const Divider(),
                 itemCount: 10,
               ),
