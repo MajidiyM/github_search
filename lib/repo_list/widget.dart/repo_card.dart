@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:github_search/repositories/models/github_repo_models.dart';
 
 // Виджет карточек проектов
 class RepoCard extends StatelessWidget {
-  const RepoCard({super.key});
+  const RepoCard({
+    super.key,
+    required this.reposContent,
+  });
+
+  final Repos reposContent;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +16,8 @@ class RepoCard extends StatelessWidget {
       color: const Color(0xFF1b2333),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: InkWell( // при нажатии на карточку выполняет действие
+        child: InkWell(
+          // при нажатии на карточку выполняет действие
           onTap: () {
             print("pressed");
           },
@@ -18,19 +25,19 @@ class RepoCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Project Name",
+                reposContent.title,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(height: 10.0),
               Text(
-                "Project Author",
+                reposContent.author,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(height: 10.0),
               Row(
                 children: [
                   Text(
-                    "Views: 100",
+                    reposContent.views,
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
                   const SizedBox(
@@ -47,7 +54,7 @@ class RepoCard extends StatelessWidget {
                         width: 5.0,
                       ),
                       Text(
-                        "100",
+                        reposContent.stars,
                         style: Theme.of(context).textTheme.displayMedium,
                       ),
                     ],
